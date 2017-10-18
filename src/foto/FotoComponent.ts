@@ -1,7 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: `foto`,
-    template: `<img width="600" src="assets/img/special.png" />  `
+    template: `<img width="600" src="{{url}}" [alt]="titulo" class="img-responsive center-block" />`
 })
-export class FotoComponent{}
+export class FotoComponent{
+    @Input()
+    url: string = ''
+    
+    @Input()
+    titulo: string = ''
+}

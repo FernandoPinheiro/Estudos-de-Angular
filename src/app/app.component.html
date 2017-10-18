@@ -2,8 +2,5 @@
   <h1 class="text-center" >{{title}}</h1>
 </header>
 <article class="container">
-    <foto url="assets/img/special.png" titulo="Lamborgini"></foto>
-    <foto url="assets/img/Ferrari-488-Right-Front-Three-Quarter-61997.jpg" titulo="Ferrari"></foto>
-    <foto url="assets/img/RollsRoyce-Dawn-Right.jpg" titulo="RollsRoyce"></foto>
-    <foto url="assets/img/P911White.jpg" titulo="porsche 911"></foto>
+    <PainelFoto *ngFor="let foto of fotos" urlFoto="{{foto.url}}" tituloFoto="{{foto.titulo}}"></foto>
 </article>

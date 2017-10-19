@@ -1,0 +1,14 @@
+<header class="jumbotron">
+  <h1 class="text-center" >{{title}}</h1>
+</header>
+<article class="container">
+  <div class="row">
+    <a [routerLink]="['/cadastro']" class="btn btn-primary" >Cadastro</a>
+  </div>
+  <div>  
+    <PainelFoto *ngFor="let foto of fotos" tituloFoto="{{foto.titulo}}" class="col-md-2">
+      <foto url="{{foto.url}}" titulo="{{foto.titulo}}"></foto>
+      <button class="btn btn-danger" (click)="remover(foto)">Remover</button>
+    </PainelFoto>
+  </div>
+</article>

@@ -10,4 +10,8 @@ export class FotoComponent{
     
     @Input()
     titulo: string = ''
+
+    descricao: string = ''
+
+    _id: string = ''
 }

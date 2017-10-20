@@ -1,3 +1,4 @@
+import { FiltroPorTitulo } from './search.pipe';
 import { FotoService } from 'services/foto.service';
 import { roteamento } from './app.routes';
 import { FotoModule } from './../foto/FotoModule';
@@ -14,7 +15,8 @@ import { FormsModule } from '@angular/forms'
   declarations: [
     AppComponent,
     ListagemComponent,
-    CadastroComponent
+    CadastroComponent,
+    FiltroPorTitulo
   ],
   imports: [
     BrowserModule, HttpModule, PainelFotoModule, FotoModule, roteamento, FormsModule

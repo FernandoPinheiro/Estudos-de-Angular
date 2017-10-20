@@ -9,7 +9,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { ListagemComponent } from './listagem/listagem.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -19,7 +19,13 @@ import { FormsModule } from '@angular/forms'
     FiltroPorTitulo
   ],
   imports: [
-    BrowserModule, HttpModule, PainelFotoModule, FotoModule, roteamento, FormsModule
+    BrowserModule, 
+    HttpModule, 
+    PainelFotoModule, 
+    FotoModule, 
+    roteamento, 
+    FormsModule,
+    ReactiveFormsModule 
   ],
   providers: [FotoService],
   bootstrap: [AppComponent]

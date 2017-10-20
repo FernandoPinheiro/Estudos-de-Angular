@@ -1,9 +1,11 @@
+import { FiltroPorTitulo } from './../search.pipe';
 import { Response } from '@angular/http';
 import { FotoService } from 'services/foto.service';
 import { Http, Headers } from '@angular/http';
 import { FotoComponent } from './../../foto/FotoComponent';
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'cadastro',
@@ -15,10 +17,22 @@ export class CadastroComponent implements OnInit {
   foto = new FotoComponent()
   _webclient: Http
   _router: Router
+  formCadastro: FormGroup
 
-  constructor(webClient: Http, router:Router, private service: FotoService, private route: ActivatedRoute) { 
+  constructor(webClient: Http, 
+              router:Router, 
+              private service: FotoService, 
+              private route: ActivatedRoute,
+              private formBuilder: FormBuilder
+            ) { 
     this._webclient = webClient
     this._router = router;
+
+    this.formCadastro = formBuilder.group({
+      titulo: ['', Validators.required ],
+      url: ['', Validators.required ],
+      descricao: ['', Validators.required]
+    })
 
     this.route.params.subscribe(
         parametros => {

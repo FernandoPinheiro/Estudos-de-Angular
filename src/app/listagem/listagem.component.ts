@@ -13,7 +13,7 @@ export class ListagemComponent implements OnInit {
   mensagem: string = ''
   _router: Router;
   
-  private fotos: FotoComponent[] = [];
+  public fotos: FotoComponent[] = [];
   
   constructor(private serice: FotoService){
     this.serice.listar().subscribe(
